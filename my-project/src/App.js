@@ -1,4 +1,4 @@
-import React, { Suspense, lazy, useEffect } from "react";
+import React, { Suspense, lazy } from "react";
 import "./App.css";
 import Loading from "./tools/loading";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -8,10 +8,6 @@ const HomePage = lazy(() => import("./component/Page/Home/HomePage"));
 const Create = lazy(() => import("./component/Page/create-user/create"));
 
 function App() {
-  useEffect(() => {
-    console.log(process.env);
-  }, []);
-
   return (
     <div
       className="App"
@@ -22,6 +18,7 @@ function App() {
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         backgroundPosition: "center",
+        overflow: "hidden",
       }}
     >
       <Suspense
@@ -38,7 +35,7 @@ function App() {
             <Route path="/create">
               <Create />
             </Route>
-            <Route path="/">
+            <Route exact path="/">
               <HomePage />
             </Route>
           </Switch>

@@ -1,12 +1,22 @@
 import axios from "axios";
+import { showNoty } from "../../tools/notification";
 
-export const createUser = (dataForm) => {
+export const createUser = (dataForm, setSuccess) => {
   axios
     .post(process.env.REACT_APP_PORT_DEV + "/user/create", dataForm)
     .then((res) => {
-      console.table(res);
+      if (res)
+        if (res.data) {
+          if (res.data.code === 200) {
+            showNoty(res.data.status, res.data.message, res.data.description);
+            setSuccess(true);
+          } else {
+            showNoty(res.data.status, res.data.message, res.data.description);
+            window.location.href = "/create";
+          }
+        }
     })
-    .catch((err) => {
-      console.error(err);
+    .catch((error) => {
+      showNoty("error", "Error", String(error));
     });
 };

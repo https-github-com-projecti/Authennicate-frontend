@@ -1,5 +1,5 @@
-import React, { useState, useCallback } from "react";
-import { Upload, message } from "antd";
+import React, { useState } from "react";
+import { Upload } from "antd";
 import ImgCrop from "antd-img-crop";
 import {
   props_customRequest,
@@ -12,7 +12,6 @@ const UploadProfile = (props) => {
 
   const onChange = ({ fileList: newFileList }) => {
     setFileList(newFileList);
-    console.log("newFileList", newFileList);
   };
 
   const onPreview = async (file) => {

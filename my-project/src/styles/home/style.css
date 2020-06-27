@@ -18,3 +18,14 @@
   flex-direction: column;
   align-items: center;
 }
+
+.container-class {
+  width: 100%;
+  height: 500px;
+}
+.avatar-hover {
+  transition: all ease-in 600ms;
+}
+.avatar-hover:hover {
+  box-shadow: 2px 2px 4px #000000;
+}

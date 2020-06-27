@@ -4,3 +4,4 @@ export const userForm = {
   Upload: String,
   phoneNumber: String,
 };
+

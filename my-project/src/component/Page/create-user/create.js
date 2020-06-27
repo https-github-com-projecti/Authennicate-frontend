@@ -1,16 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import "../../../styles/create-user/style.css";
 import FormRegistor from "./form-registor";
-import UploadProfile from "./upload-profile";
 
 const Createuser = () => {
-  const [value, setValue] = useState({});
-  const [file, setFile] = useState([]);
-
-  const valueProfile = (event) => {
-    console.log(event);
-  };
-
   return (
     <div>
       <div

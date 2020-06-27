@@ -5,17 +5,16 @@ import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import { login } from "../../../service/Home/homepage-service";
 import { portDev, portAssets } from "../../../configs";
 import "../../../styles/home/style.css";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { showNoty } from "../../../tools/notification";
 
 const Login = (props) => {
-  console.log("{...props}:", { ...props });
   const onFinish = (values) => {
-    console.log("Success:", values);
     login(values.username, values.password, portDev, props);
   };
 
   const onFinishFailed = (errorInfo) => {
-    console.log("Failed:", errorInfo);
+    showNoty("error", "Failed Login", "Error is now login " + errorInfo);
   };
 
   return (
