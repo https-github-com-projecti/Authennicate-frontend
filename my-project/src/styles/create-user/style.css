@@ -1,0 +1,13 @@
+.container {
+  width: 70%;
+  min-height: 500px;
+  display: flex;
+  margin-top: 64px;
+  position: relative;
+}
+.container-form-edit:nth-child(1) {
+  width: 60%;
+  height: 100%;
+  padding: 30px;
+  box-shadow: 0 8px 6px -6px black;
+}

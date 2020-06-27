@@ -13,21 +13,29 @@ const HomePage = () => {
       <Navbar
         bg="light"
         variant="light"
-        style={{ borderBottom: "0.5px solid black" }}
+        style={{
+          boxShadow: "0 7px 6px -6px black",
+        }}
       >
-        <Navbar.Brand href="#home">Check Name</Navbar.Brand>
+        <Navbar.Brand href="#home">
+          <h3
+            style={{
+              fontFamily: "Serif",
+              fontStyle: "oblique",
+              fontWeight: "bold",
+              color: "white",
+              textShadow: "2px 2px 4px #000000",
+            }}
+          >
+            Check Name
+          </h3>
+        </Navbar.Brand>
         <Nav className="mr-auto"></Nav>
         <Form inline>
-          <Avatar
-            size="large"
-            icon={<UserOutlined />}
-            src={
-              "https://www.flexibleproduction.com/wp-content/uploads/2017/06/test-intelligenza-sociale.jpg"
-            }
-          />
+          <Avatar size="large" icon={<UserOutlined />} />
         </Form>
       </Navbar>
-      <Login show={modalShow} onHide={() => setModalShow(true)} />
+      <Login show={modalShow} onHide={() => setModalShow(false)} />
     </div>
   );
 };
