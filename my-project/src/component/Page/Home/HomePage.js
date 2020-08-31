@@ -2,7 +2,6 @@ import React, { useEffect, useState, lazy } from "react";
 import { Navbar, Nav, Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Result, Button } from "antd";
-import { PlusCircleTwoTone } from "@ant-design/icons";
 import Login from "../Login/Login";
 import { dataUser } from "../../../tools/home-tool";
 import "../../../styles/home/style.css";
