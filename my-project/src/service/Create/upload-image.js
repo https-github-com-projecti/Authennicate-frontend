@@ -22,10 +22,20 @@ export const props_customRequest = (
           if (res.data.code === 200) {
             props.valuePathImage(res.data.id);
             setPath(res.data.id);
-            showNoty(res.data.status, res.data.message, res.data.description);
+            showNoty(
+              res.data.status,
+              res.data.message,
+              res.data.description,
+              "bottomRight"
+            );
             componentsData.onSuccess();
           } else {
-            showNoty(res.data.status, res.data.message, res.data.description);
+            showNoty(
+              res.data.status,
+              res.data.message,
+              res.data.description,
+              "bottomRight"
+            );
             setFileList([]);
             componentsData.onError("Error uploading image");
           }
@@ -34,7 +44,7 @@ export const props_customRequest = (
     })
     .catch((error) => {
       setFileList([]);
-      showNoty("error", "Error", String(error));
+      showNoty("error", "Error", String(error), "bottomRight");
       componentsData.onError("Error uploading image");
     });
 };
@@ -46,15 +56,25 @@ export const props_customDelete = (path, setFileList) => {
       if (res) {
         if (res.data) {
           if (res.data.code === 200)
-            showNoty(res.data.status, res.data.message, res.data.description);
+            showNoty(
+              res.data.status,
+              res.data.message,
+              res.data.description,
+              "bottomRight"
+            );
           else {
             setFileList([]);
-            showNoty(res.data.status, res.data.message, res.data.description);
+            showNoty(
+              res.data.status,
+              res.data.message,
+              res.data.description,
+              "bottomRight"
+            );
           }
         }
       }
     })
     .catch((error) => {
-      showNoty("error", "Error", String(error));
+      showNoty("error", "Error", String(error), "bottomRight");
     });
 };

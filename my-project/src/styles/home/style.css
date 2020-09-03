@@ -18,7 +18,9 @@
   flex-direction: column;
   align-items: center;
 }
-
+.App-header {
+  position: relative;
+}
 .container-class {
   width: 100%;
   height: 500px;
@@ -28,4 +30,11 @@
 }
 .avatar-hover:hover {
   box-shadow: 2px 2px 4px #000000;
+}
+.button-create-class {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 1%;
+  padding: 30px;
 }

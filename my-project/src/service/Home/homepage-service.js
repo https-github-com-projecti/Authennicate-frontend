@@ -19,15 +19,25 @@ export const login = async (username, password, port, props) => {
           if (res.data.code === 200) {
             localStorage.setItem("user_id", res.data.id);
             props.onHide();
-            showNoty(res.data.status, res.data.message, res.data.description);
+            showNoty(
+              res.data.status,
+              res.data.message,
+              res.data.description,
+              "bottomRight"
+            );
           } else {
-            showNoty(res.data.status, res.data.message, res.data.description);
+            showNoty(
+              res.data.status,
+              res.data.message,
+              res.data.description,
+              "bottomRight"
+            );
           }
         }
       }
     })
     .catch((error) => {
-      showNoty("error", "Error", String(error));
+      showNoty("error", "Error", String(error), "bottomRight");
     });
 };
 
@@ -39,10 +49,20 @@ export const getPathIamge = async (id) => {
       if (res) {
         if (res.data) {
           if (res.data.code === 200) {
-            showNoty(res.data.status, res.data.message, res.data.description);
+            showNoty(
+              res.data.status,
+              res.data.message,
+              res.data.description,
+              "bottomRight"
+            );
             path = res.data.path;
           } else {
-            showNoty(res.data.status, res.data.message, res.data.description);
+            showNoty(
+              res.data.status,
+              res.data.message,
+              res.data.description,
+              "bottomRight"
+            );
             localStorage.clear();
             window.location.href = "/";
           }
@@ -50,7 +70,7 @@ export const getPathIamge = async (id) => {
       }
     })
     .catch((error) => {
-      showNoty("error", "Error", String(error));
+      showNoty("error", "Error", String(error), "bottomRight");
       localStorage.clear();
       window.location.href = "/";
     });

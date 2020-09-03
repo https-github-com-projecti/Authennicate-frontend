@@ -14,7 +14,12 @@ const Login = (props) => {
   };
 
   const onFinishFailed = (errorInfo) => {
-    showNoty("error", "Failed Login", "Error is now login " + errorInfo);
+    showNoty(
+      "error",
+      "Failed Login",
+      "Error is now login " + errorInfo,
+      "bottomRight"
+    );
   };
 
   return (
