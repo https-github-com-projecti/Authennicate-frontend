@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { portAssets } from "./configs";
 
 const HomePage = lazy(() => import("./component/Page/Home/HomePage"));
-const Create = lazy(() => import("./component/Page/create-user/create"));
+const Create = lazy(() => import("./component/Page/CreateUsers/create"));
 
 function App() {
   return (

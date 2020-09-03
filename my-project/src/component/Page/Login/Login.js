@@ -14,7 +14,12 @@ const Login = (props) => {
   };
 
   const onFinishFailed = (errorInfo) => {
-    showNoty("error", "Failed Login", "Error is now login " + errorInfo);
+    showNoty(
+      "error",
+      "Failed Login",
+      "Error is now login " + errorInfo,
+      "bottomRight"
+    );
   };
 
   return (
@@ -85,7 +90,10 @@ const Login = (props) => {
                   <Checkbox>Remember me</Checkbox>
                 </Form.Item>
 
-                <a className="login-form-forgot" href="">
+                <a
+                  className="login-form-forgot"
+                  href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-is-valid.md"
+                >
                   Forgot password
                 </a>
               </Form.Item>

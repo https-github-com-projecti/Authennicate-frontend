@@ -185,7 +185,10 @@ const FormRegistor = () => {
           {...tailFormItemLayout}
         >
           <Checkbox>
-            I have read the <a href="">agreement</a>
+            I have read the{" "}
+            <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-is-valid.md">
+              agreement
+            </a>
           </Checkbox>
         </Form.Item>
         <Form.Item {...tailFormItemLayout}>

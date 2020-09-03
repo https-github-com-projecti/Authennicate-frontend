@@ -2,16 +2,18 @@ import React, { useEffect, useState, lazy } from "react";
 import { Navbar, Nav, Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Result, Button } from "antd";
-import { PlusCircleTwoTone } from "@ant-design/icons";
+import { PlusCircleOutlined } from "@ant-design/icons";
 import Login from "../Login/Login";
 import { dataUser } from "../../../tools/home-tool";
 import "../../../styles/home/style.css";
 
 const AvatarComponent = lazy(() => import("./Avatar"));
+const SubjectComponent = lazy(() => import("../Subject/Subject"));
 
 const HomePage = () => {
   const [modalShow, setModalShow] = useState(true);
   const [path, setPath] = useState("");
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     if (localStorage.getItem("user_id") != null) {
@@ -58,11 +60,36 @@ const HomePage = () => {
           status="404"
           title="Empty"
           subTitle="Sorry, the page you is not data."
-          extra={<Button type="primary">Create Class</Button>}
+          extra={
+            <Button
+              type="primary"
+              onClick={() => {
+                setVisible(true);
+              }}
+            >
+              Create Class
+            </Button>
+          }
+        />
+
+        <Button
+          type="primary"
+          shape="circle"
+          icon={<PlusCircleOutlined />}
+          size={"large"}
+          className={"button-create-class"}
+          onClick={() => {
+            setVisible(true);
+          }}
         />
       </header>
 
-      <div className={"container-class"}></div>
+      <div className={"container-class"}>
+        <SubjectComponent
+          visible={visible}
+          setVisible={(data) => setVisible(data)}
+        />
+      </div>
     </div>
   );
 };

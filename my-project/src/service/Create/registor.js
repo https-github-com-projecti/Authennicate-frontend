@@ -8,15 +8,25 @@ export const createUser = (dataForm, setSuccess) => {
       if (res)
         if (res.data) {
           if (res.data.code === 200) {
-            showNoty(res.data.status, res.data.message, res.data.description);
+            showNoty(
+              res.data.status,
+              res.data.message,
+              res.data.description,
+              "bottomRight"
+            );
             setSuccess(true);
           } else {
-            showNoty(res.data.status, res.data.message, res.data.description);
+            showNoty(
+              res.data.status,
+              res.data.message,
+              res.data.description,
+              "bottomRight"
+            );
             window.location.href = "/create";
           }
         }
     })
     .catch((error) => {
-      showNoty("error", "Error", String(error));
+      showNoty("error", "Error", String(error), "bottomRight");
     });
 };
