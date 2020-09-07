@@ -1,24 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { portAssets } from "./configs";
+import Router from "./router";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div
+      className="App"
+      style={{
+        width: "100%",
+        height: "100vh",
+        backgroundImage: `linear-gradient(rgba(70, 70, 70, 0.226), rgba(70, 70, 70, 0.226)),url(${portAssets}green-leaves-1931141.jpg)`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        overflow: "auto",
+      }}
+    >
+      <Router />
     </div>
   );
 }

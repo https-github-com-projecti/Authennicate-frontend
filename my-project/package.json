@@ -3,18 +3,36 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@craco/craco": "^5.6.4",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "antd": "^4.3.4",
+    "antd-img-crop": "^3.9.0",
+    "axios": "^0.19.2",
+    "base-64": "^0.1.0",
+    "bootstrap": "^4.5.0",
+    "craco-less": "^1.17.0",
+    "dotenv": "^8.2.0",
+    "dotenv-expand": "^5.1.0",
+    "js-sha512": "^0.8.0",
+    "qrcode.react": "^1.0.0",
     "react": "^16.13.1",
+    "react-allow": "0.0.7",
+    "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-fade-in": "^1.1.0",
+    "react-loading": "^2.0.3",
+    "react-lottie": "^1.2.3",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^3.4.3",
+    "utf8": "^3.0.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "set PORT=4200 && react-scripts  start",
+    "build": "react-scripts  build",
+    "test": "react-scripts  test",
+    "eject": "react-scripts  eject"
   },
   "eslintConfig": {
     "extends": "react-app"
