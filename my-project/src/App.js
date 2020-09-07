@@ -1,11 +1,7 @@
-import React, { Suspense, lazy } from "react";
+import React from "react";
 import "./App.css";
-import Loading from "./tools/loading";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { portAssets } from "./configs";
-
-const HomePage = lazy(() => import("./component/Page/Home/HomePage"));
-const Create = lazy(() => import("./component/Page/CreateUsers/create"));
+import Router from "./router";
 
 function App() {
   return (
@@ -14,33 +10,14 @@ function App() {
       style={{
         width: "100%",
         height: "100vh",
-        backgroundImage: `url(${portAssets}green-leaves-1931141.jpg)`,
+        backgroundImage: `linear-gradient(rgba(70, 70, 70, 0.226), rgba(70, 70, 70, 0.226)),url(${portAssets}green-leaves-1931141.jpg)`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        overflow: "hidden",
+        overflow: "auto",
       }}
     >
-      <Suspense
-        fallback={
-          <header className="App-header">
-            <Loading />
-          </header>
-        }
-      >
-        <Router>
-          {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
-          <Switch>
-            <Route path="/create">
-              <Create />
-            </Route>
-            <Route exact path="/">
-              <HomePage />
-            </Route>
-          </Switch>
-        </Router>
-      </Suspense>
+      <Router />
     </div>
   );
 }

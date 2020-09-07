@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import { Form, Input, Tooltip, Checkbox, Button, DatePicker } from "antd";
 import { QuestionCircleOutlined } from "@ant-design/icons";
 import { Link, Redirect } from "react-router-dom";
-import UploadProfile from "./upload-profile";
+import UploadProfile from "./Create-Users-upload-profile-component";
 import { userForm } from "../../../tools/struct/createUserForm";
-import { createUser } from "../../../service/Create/registor";
+import { createUser } from "../../../service/Create/Create-registor-service";
 
 const formItemLayout = {
   labelCol: {
     xs: { span: 24 },
-    sm: { span: 8 },
+    sm: { span: 6 },
   },
   wrapperCol: {
     xs: { span: 24 },
@@ -24,12 +24,12 @@ const tailFormItemLayout = {
     },
     sm: {
       span: 16,
-      offset: 8,
+      offset: 5,
     },
   },
 };
 
-const FormRegistor = () => {
+const FormRegistorComponent = () => {
   const [path, setPath] = useState("");
   const [success, setSuccess] = useState(false);
 
@@ -37,7 +37,7 @@ const FormRegistor = () => {
   let user = userForm;
 
   const onFinish = (values) => {
-    user.username = values.Username;
+    user.username = values.username;
     user.password = values.password;
     user.phoneNumber = values.phone;
     user.Upload = path;
@@ -94,6 +94,27 @@ const FormRegistor = () => {
         </Form.Item>
 
         <Form.Item
+          name="username"
+          label={
+            <span>
+              Username&nbsp;
+              <Tooltip title="What do you want others to call you?">
+                <QuestionCircleOutlined />
+              </Tooltip>
+            </span>
+          }
+          rules={[
+            {
+              required: true,
+              message: "Please input your username!",
+              whitespace: true,
+            },
+          ]}
+        >
+          <Input />
+        </Form.Item>
+
+        <Form.Item
           name="password"
           label="Password"
           rules={[
@@ -130,27 +151,6 @@ const FormRegistor = () => {
           ]}
         >
           <Input.Password />
-        </Form.Item>
-
-        <Form.Item
-          name="Username"
-          label={
-            <span>
-              Username&nbsp;
-              <Tooltip title="What do you want others to call you?">
-                <QuestionCircleOutlined />
-              </Tooltip>
-            </span>
-          }
-          rules={[
-            {
-              required: true,
-              message: "Please input your username!",
-              whitespace: true,
-            },
-          ]}
-        >
-          <Input />
         </Form.Item>
 
         <Form.Item
@@ -204,4 +204,4 @@ const FormRegistor = () => {
   );
 };
 
-export default FormRegistor;
+export default FormRegistorComponent;

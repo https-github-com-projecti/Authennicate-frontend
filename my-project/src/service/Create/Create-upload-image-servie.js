@@ -1,6 +1,7 @@
 import axios from "axios";
 import { showNoty } from "../../tools/notification";
 
+
 export const props_customRequest = (
   componentsData,
   props,
@@ -55,14 +56,14 @@ export const props_customDelete = (path, setFileList) => {
     .then((res) => {
       if (res) {
         if (res.data) {
-          if (res.data.code === 200)
+          if (res.data.code === 200) {
             showNoty(
               res.data.status,
               res.data.message,
               res.data.description,
               "bottomRight"
             );
-          else {
+          } else {
             setFileList([]);
             showNoty(
               res.data.status,

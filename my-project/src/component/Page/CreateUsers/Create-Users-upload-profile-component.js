@@ -4,9 +4,9 @@ import ImgCrop from "antd-img-crop";
 import {
   props_customRequest,
   props_customDelete,
-} from "../../../service/Create/upload-image";
+} from "../../../service/Create/Create-upload-image-servie";
 
-const UploadProfile = (props) => {
+const UploadProfileComponent = (props) => {
   const [fileList, setFileList] = useState([]);
   const [path, setPath] = useState([]);
 
@@ -54,4 +54,4 @@ const UploadProfile = (props) => {
   );
 };
 
-export default UploadProfile;
+export default UploadProfileComponent;
