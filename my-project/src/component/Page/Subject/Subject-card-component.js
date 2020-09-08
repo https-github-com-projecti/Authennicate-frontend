@@ -51,6 +51,10 @@ const SubjectCardComponent = (props) => {
     );
   };
 
+  const routering = () => {
+    window.location.href = `/home/course/${item.ID}`;
+  };
+
   return (
     <div>
       {item != null ? (
@@ -72,6 +76,9 @@ const SubjectCardComponent = (props) => {
                   : "https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
               }
               style={{ height: "190px" }}
+              onClick={() => {
+                routering();
+              }}
             />
           }
           actions={[
@@ -83,9 +90,6 @@ const SubjectCardComponent = (props) => {
             />,
             <EditOutlined key="edit" />,
           ]}
-          onClick={() => {
-            window.location.href = `/home/course/${item.ID}`;
-          }}
         >
           <Meta
             avatar={
@@ -99,6 +103,9 @@ const SubjectCardComponent = (props) => {
             }
             title={title(item.Name)}
             description={description(item.SubjectID, item.Description)}
+            onClick={() => {
+              routering();
+            }}
           />
         </Card>
       ) : null}
