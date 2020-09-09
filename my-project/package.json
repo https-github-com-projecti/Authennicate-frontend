@@ -24,6 +24,7 @@
     "react-fade-in": "^1.1.0",
     "react-loading": "^2.0.3",
     "react-lottie": "^1.2.3",
+    "react-moment": "^0.9.7",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.3",
     "utf8": "^3.0.0"

@@ -11,7 +11,7 @@ import CardAuthenComponent from "./Course-card-qrcode-component";
 
 const QrCodeComponent = (props) => {
   const [create, setCreate] = useState();
-  const [subject, setSubject] = useState();
+  // const [subject, setSubject] = useState();
   const [authen, setAuthen] = useState();
 
   const handleCancle = (res) => {
@@ -26,7 +26,6 @@ const QrCodeComponent = (props) => {
   };
 
   useEffect(() => {
-    console.log(props);
     if (props.create) {
       let form = userForm;
       form.Subject = props.subject.ID;
@@ -37,7 +36,7 @@ const QrCodeComponent = (props) => {
         }
       });
     }
-    setSubject(props.subject);
+    // setSubject(props.subject);
     const _s = props.subject;
     if (_s != null) {
       GetAuthenAll(_s.ID, (res) => {
@@ -57,7 +56,9 @@ const QrCodeComponent = (props) => {
       {authen != null
         ? authen.map((item) => {
             let res = base64Encode(item);
-            return <CardAuthenComponent key={item.ID} value={res} />;
+            return (
+              <CardAuthenComponent key={item.ID} value={res} data={item} />
+            );
           })
         : null}
     </div>

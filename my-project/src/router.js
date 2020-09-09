@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React, { Suspense, lazy } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -6,9 +6,16 @@ import {
   Redirect,
 } from "react-router-dom";
 import Loading from "./tools/loading";
-import HomePage from "./component/Page/Home/Home-home-page-component";
-import Create from "./component/Page/CreateUsers/Create-Users-create-component";
-import Login from "./component/Page/Login/Login-login-component";
+
+const HomePage = lazy(() =>
+  import("./component/Page/Home/Home-home-page-component")
+);
+const Create = lazy(() =>
+  import("./component/Page/CreateUsers/Create-Users-create-component")
+);
+const Login = lazy(() =>
+  import("./component/Page/Login/Login-login-component")
+);
 
 const RouterComponent = () => {
   return (

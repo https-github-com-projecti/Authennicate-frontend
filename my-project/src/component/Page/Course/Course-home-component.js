@@ -41,6 +41,8 @@ const CourseHomeComponent = () => {
               : "https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
           })`,
           backgroundPosition: "center",
+          backgroundPositionX: "center",
+          backgroundPositionY: "center",
           backgroundSize: "100%",
           marginLeft: "15%",
           textAlign: "left",
@@ -51,14 +53,14 @@ const CourseHomeComponent = () => {
           <h2 className="card-title" style={{ color: "white" }}>
             {subject != null ? subject.Name : null}
           </h2>
+          <p className="card-text" style={{ fontWeight: "600" }}>
+            CODE FOR JOIN | {subject != null ? subject.Key : null}
+          </p>
           <p className="card-text">
             {subject != null ? subject.SubjectID : null}
           </p>
-          <p className="card-text">
+          <p className="card-text" style={{ fontSize: "12px" }}>
             {subject != null ? subject.Description : null}
-          </p>
-          <p className="card-text" style={{ fontWeight: "600" }}>
-            CODE FOR JOIN | {subject != null ? subject.Key : null}
           </p>
         </div>
       </div>

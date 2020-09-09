@@ -59,6 +59,7 @@ const SubjectCardComponent = (props) => {
     <div>
       {item != null ? (
         <Card
+          hoverable
           key={item != null ? item.ID : null}
           style={{
             width: "300px",
