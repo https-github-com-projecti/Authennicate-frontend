@@ -7,6 +7,9 @@ import {
 import "../../../styles/Course/style.css";
 import ButtonCreateComponent from "../Home/Home-button-create-component";
 import QrCodeComponent from "./Course-qr-code-component";
+import { Typography } from "antd";
+
+const { Paragraph } = Typography;
 
 const CourseHomeComponent = () => {
   const [pathWall, setPathWall] = useState("");
@@ -53,15 +56,28 @@ const CourseHomeComponent = () => {
           <h2 className="card-title" style={{ color: "white" }}>
             {subject != null ? subject.Name : null}
           </h2>
-          <p className="card-text" style={{ fontWeight: "600" }}>
-            CODE FOR JOIN | {subject != null ? subject.Key : null}
-          </p>
+          {subject != null ? (
+            <Paragraph
+              style={{
+                color: "rgb(153, 153, 153)",
+                fontSize: "17px",
+                fontWeight: 600,
+              }}
+              copyable={{ text: `${subject.Key}`, tooltips: false }}
+            >
+              CODE FOR JOIN | {subject.Key}
+            </Paragraph>
+          ) : null}
           <p className="card-text">
             {subject != null ? subject.SubjectID : null}
           </p>
-          <p className="card-text" style={{ fontSize: "12px" }}>
+          <Paragraph
+            ellipsis
+            className="card-text"
+            style={{ fontSize: "12px", color: "rgb(153, 153, 153)" }}
+          >
             {subject != null ? subject.Description : null}
-          </p>
+          </Paragraph>
         </div>
       </div>
       <hr />
