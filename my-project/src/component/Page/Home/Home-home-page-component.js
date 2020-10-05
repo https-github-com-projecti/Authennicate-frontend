@@ -20,7 +20,7 @@ const HomePageComponent = () => {
   return (
     <div>
       <NavbarComponent path={path} />
-      <Layout className="App-header" theme="light">
+      <Layout className="App-header-home">
         <Content className="site-layout">
           <HomeRouter />
         </Content>

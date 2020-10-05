@@ -14,8 +14,6 @@ const CardAuthenComponent = (props) => {
     setData(props.data);
   }, [props]);
 
-  // console.log("data :: ", data);
-
   return (
     <div
       style={{

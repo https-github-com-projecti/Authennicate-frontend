@@ -29,7 +29,6 @@ const CreateUserComponent = () => {
         <div
           className={"container-form-edit"}
           style={{
-            // width: "100%",
             backgroundImage: `url(${portAssets}selective-focus-photo-of-brown-grass-1776268.jpg)`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",

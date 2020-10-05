@@ -40,8 +40,11 @@
 }
 
 .App-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #29263500;
-  /* min-height: 100vh; */
+  min-height: 100vh;
   font-size: calc(10px + 2vmin);
   color: white;
 }
