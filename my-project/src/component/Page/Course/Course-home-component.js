@@ -38,11 +38,11 @@ const CourseHomeComponent = () => {
           margin: "2%",
           overflow: "hidden",
           position: "relative",
-          backgroundImage: `url(${
-            pathWall !== ""
-              ? `${process.env.REACT_APP_PORT_DEV}/${pathWall}`
-              : "https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-          })`,
+          // backgroundImage: `url(${
+          //   pathWall !== ""
+          //     ? `${process.env.REACT_APP_PORT_DEV}/${pathWall}`
+          //     : "https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+          // })`,
           backgroundPosition: "center",
           backgroundPositionX: "center",
           backgroundPositionY: "center",

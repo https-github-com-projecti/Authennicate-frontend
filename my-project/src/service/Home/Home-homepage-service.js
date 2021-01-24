@@ -57,6 +57,7 @@ export const getPathIamge = async (id) => {
             //   res.data.description,
             //   "bottomRight"
             // );
+            // console.log("data :: ", res.data);
             path = res.data.path;
           } else {
             showNoty(

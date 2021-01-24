@@ -106,13 +106,6 @@ export const GetUploadPath = async (id, callback) => {
             //   "bottomRight"
             // );
             callback(res.data);
-          } else {
-            showNoty(
-              res.data.status,
-              res.data.message,
-              res.data.description,
-              "bottomRight"
-            );
           }
         }
       }

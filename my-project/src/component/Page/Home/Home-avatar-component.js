@@ -44,7 +44,11 @@ const AvatarComponent = (props) => {
         id="dropdown"
       >
         <Avatar
-          src={path !== "" ? `${process.env.REACT_APP_PORT_DEV}/${path}` : ""}
+          src={
+            path !== ""
+              ? `${process.env.REACT_APP_PORT_DEV}/upload/profile/${path}`
+              : ""
+          }
           size="large"
           icon={<UserOutlined />}
           className={"avatar-hover"}

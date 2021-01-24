@@ -97,8 +97,8 @@ const SubjectCardComponent = (props) => {
               <Avatar
                 src={
                   path !== ""
-                    ? `${process.env.REACT_APP_PORT_DEV}/${path}`
-                    : "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+                    ? `${process.env.REACT_APP_PORT_DEV}/upload/profile/${path}`
+                    : ""
                 }
               />
             }
