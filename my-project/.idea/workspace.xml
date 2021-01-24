@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:feature" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0aff03e3-12b8-409d-9475-0bd3cc0cd141" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/my-project.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Page/CreateUsers/create.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Page/CreateUsers/create.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Page/CreateUsers/form-registor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Page/CreateUsers/form-registor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Page/Home/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Page/Home/HomePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Page/Login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Page/Login/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Page/Subject/FormSubject.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Page/Subject/FormSubject.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Page/Subject/Subject.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Page/Subject/Subject.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/Create/upload-image.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/Create/upload-image.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/Home/homepage-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/Home/homepage-service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/home/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/home/style.css" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA 2020.1.2\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1h7jjHKLz9EyfrOx8Cn5b0sllG8" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0aff03e3-12b8-409d-9475-0bd3cc0cd141" name="Default Changelist" comment="" />
+      <created>1599369159530</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1599369159530</updated>
+      <workItem from="1599369162167" duration="4000" />
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

@@ -2,15 +2,20 @@ import React from "react";
 import { Modal } from "react-bootstrap";
 import { Form, Input, Button, Checkbox } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
-import { login } from "../../../service/Home/homepage-service";
+import { loginUser } from "../../../service/Home/Home-homepage-service";
 import { portDev, portAssets } from "../../../configs";
 import "../../../styles/home/style.css";
 import { Link } from "react-router-dom";
 import { showNoty } from "../../../tools/notification";
 
-const Login = (props) => {
+const LoginComponent = (props) => {
+  
   const onFinish = (values) => {
-    login(values.username, values.password, portDev, props);
+    loginUser(values.username, values.password, portDev).then((res) => {
+      if (res) {
+        window.location = "/home";
+      }
+    });
   };
 
   const onFinishFailed = (errorInfo) => {
@@ -25,7 +30,7 @@ const Login = (props) => {
   return (
     <div>
       <Modal
-        show={props.show}
+        show={true}
         onHide={() => {}}
         size="lg"
         aria-labelledby="contained-modal-title-vcenter"
@@ -39,6 +44,7 @@ const Login = (props) => {
             backgroundSize: "cover",
             backgroundPosition: "center",
             position: "relative",
+            backgroundBlendMode: "overlay",
           }}
         >
           <div style={{ width: "100%", height: "200px" }} />
@@ -106,7 +112,7 @@ const Login = (props) => {
                 >
                   Log in
                 </Button>
-                Or <Link to="/create">register now!</Link>
+                Or <Link to="/create-user">register now!</Link>
               </Form.Item>
             </Form>
           </div>
@@ -116,4 +122,4 @@ const Login = (props) => {
   );
 };
 
-export default Login;
+export default LoginComponent;

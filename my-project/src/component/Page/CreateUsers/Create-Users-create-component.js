@@ -1,8 +1,9 @@
 import React from "react";
 import "../../../styles/create-user/style.css";
-import FormRegistor from "./form-registor";
+import FormRegistor from "./Create-Users-form-registor-component";
+import { portAssets } from "../../../configs";
 
-const Createuser = () => {
+const CreateUserComponent = () => {
   return (
     <div>
       <div
@@ -25,7 +26,17 @@ const Createuser = () => {
         </h3>
       </div>
       <div className={"container"}>
-        <div className={"container-form-edit"}>
+        <div
+          className={"container-form-edit"}
+          style={{
+            backgroundImage: `url(${portAssets}selective-focus-photo-of-brown-grass-1776268.jpg)`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            position: "relative",
+            backgroundBlendMode: "overlay",
+          }}
+        >
           <FormRegistor />
         </div>
       </div>
@@ -33,4 +44,4 @@ const Createuser = () => {
   );
 };
 
-export default Createuser;
+export default CreateUserComponent;

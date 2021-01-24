@@ -1,5 +1,31 @@
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #3084e4;
+  border-radius: 10px;
+  transition: all ease-in 600ms;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #0a4e9c;
+}
+
 .App {
+  position: relative;
+  width: 100%;
   text-align: center;
+  height: 100%;
 }
 
 .App-logo {
@@ -14,12 +40,11 @@
 }
 
 .App-header {
-  background-color: #2926358c;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  background-color: #29263500;
+  min-height: 100vh;
   font-size: calc(10px + 2vmin);
   color: white;
 }

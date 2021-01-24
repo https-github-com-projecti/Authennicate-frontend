@@ -1,30 +1,20 @@
 import axios from "axios";
 import { showNoty } from "../../tools/notification";
 
-var base64 = require("base-64");
-var utf8 = require("utf8");
-
-export const login = async (username, password, port, props) => {
-  var bytes = utf8.encode(password);
-  let pass_encrypt = base64.encode(bytes);
-  const data = {
-    username: username,
-    password: pass_encrypt,
-  };
+export const GetAuthenAll = async (id, callback) => {
   await axios
-    .post(`${port}/user/login`, data)
+    .get(`${process.env.REACT_APP_PORT_DEV}/authen/subject-authen/${id}`)
     .then((res) => {
       if (res) {
         if (res.data) {
           if (res.data.code === 200) {
-            localStorage.setItem("user_id", res.data.id);
-            props.onHide();
-            showNoty(
-              res.data.status,
-              res.data.message,
-              res.data.description,
-              "bottomRight"
-            );
+            // showNoty(
+            //   res.data.status,
+            //   res.data.message,
+            //   res.data.description,
+            //   "bottomRight"
+            // );
+            callback(res.data);
           } else {
             showNoty(
               res.data.status,
@@ -41,10 +31,9 @@ export const login = async (username, password, port, props) => {
     });
 };
 
-export const getPathIamge = async (id) => {
-  let path = "";
+export const CreateAuthen = async (form, callback) => {
   await axios
-    .get(`${process.env.REACT_APP_PORT_DEV}/user/image/${id}`)
+    .post(`${process.env.REACT_APP_PORT_DEV}/authen/create`, form)
     .then((res) => {
       if (res) {
         if (res.data) {
@@ -55,7 +44,7 @@ export const getPathIamge = async (id) => {
               res.data.description,
               "bottomRight"
             );
-            path = res.data.path;
+            callback(true);
           } else {
             showNoty(
               res.data.status,
@@ -63,16 +52,11 @@ export const getPathIamge = async (id) => {
               res.data.description,
               "bottomRight"
             );
-            localStorage.clear();
-            window.location.href = "/";
           }
         }
       }
     })
     .catch((error) => {
       showNoty("error", "Error", String(error), "bottomRight");
-      localStorage.clear();
-      window.location.href = "/";
     });
-  return path;
 };
