@@ -13,7 +13,7 @@ const SubjectCardComponent = (props) => {
   useEffect(() => {
     setItem(props.item);
     if (props.item.User != null) {
-      dataUser(setPath, props.item.User);
+      dataUser(setPath, props.item.Upload);
       GetUploadPath(props.item.Upload, (res) => {
         setPathWall(res.upload.Path);
       });
@@ -65,7 +65,6 @@ const SubjectCardComponent = (props) => {
             width: "300px",
             margin: "10px",
             cursor: "pointer",
-            height: "350px",
             overflow: "hidden",
           }}
           cover={

@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-import { portAssets } from "./configs";
 import Router from "./router";
 
 function App() {

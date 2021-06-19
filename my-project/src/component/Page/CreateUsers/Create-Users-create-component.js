@@ -1,7 +1,6 @@
 import React from "react";
 import "../../../styles/create-user/style.css";
 import FormRegistor from "./Create-Users-form-registor-component";
-import { portAssets } from "../../../configs";
 
 const CreateUserComponent = () => {
   return (
