@@ -3,4 +3,5 @@ export const userForm = {
   password: String,
   Upload: String,
   phoneNumber: String,
+  Role: String,
 };

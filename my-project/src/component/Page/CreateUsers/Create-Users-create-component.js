@@ -1,7 +1,6 @@
 import React from "react";
 import "../../../styles/create-user/style.css";
 import FormRegistor from "./Create-Users-form-registor-component";
-import { portAssets } from "../../../configs";
 
 const CreateUserComponent = () => {
   return (
@@ -29,7 +28,7 @@ const CreateUserComponent = () => {
         <div
           className={"container-form-edit"}
           style={{
-            backgroundImage: `url(${portAssets}selective-focus-photo-of-brown-grass-1776268.jpg)`,
+            // backgroundImage: `url(${portAssets}selective-focus-photo-of-brown-grass-1776268.jpg)`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
             backgroundPosition: "center",

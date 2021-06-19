@@ -5,9 +5,13 @@ import { DeleteSubject } from "../../../service/Subject/Subject-subject-service"
 import "../../../styles/Subject/style.css";
 import SubjectModalComponent from "./Subject-modal-component";
 import SubjectCardComponent from "./Subject-card-component";
+import SubjectJoinConponent from "./Subject-modal-join-class-component";
 import {
   GetSubject,
   CreateSubject,
+  GetRole,
+  CheckPasswordSub,
+  CreateJoinSubject,
 } from "../../../service/Subject/Subject-subject-service";
 import ButtonCreateComponent from "../Home/Home-button-create-component";
 
@@ -19,6 +23,17 @@ const SubjectComponent = () => {
   const [confirmLoading, setConfirmLoading] = useState(false);
   const [fetch, setFetch] = useState(false);
   const [form] = Form.useForm();
+  const [role, setRole] = useState("");
+  const [formJoin] = Form.useForm();
+  const [checkKey, setCheckKey] = useState(false);
+  const [subjectJoin, setSubjectJoin] = useState(null);
+  const [checkPrivate, setCheckPrivate] = useState(false);
+
+  useEffect(() => {
+    GetRole(localStorage.getItem("user_id"), (res) => {
+      if (res != null) setRole(res.role.Name);
+    });
+  }, []);
 
   useEffect(() => {
     GetSubject(localStorage.getItem("user_id"), (res) => {
@@ -56,7 +71,13 @@ const SubjectComponent = () => {
       .validateFields()
       .then(async (values) => {
         form.resetFields();
-        const valueValidate = onCreate(values);
+        let valueValidate = onCreate(values);
+        valueValidate = {
+          ...valueValidate,
+          Upload: localStorage.getItem("user_id"),
+          status: "master",
+        };
+        console.log("valueValidate ", valueValidate);
         setFetch(true);
         await CreateSubject(valueValidate);
         setVisible(false);
@@ -73,6 +94,60 @@ const SubjectComponent = () => {
     form.resetFields();
     setVisible(false);
     setConfirmLoading(false);
+  };
+
+  const onFinish = () => {
+    setConfirmLoading(true);
+    formJoin
+      .validateFields()
+      .then(async (values) => {
+        if (checkKey) {
+          console.log(values);
+          if (checkPrivate) {
+            let checkEqual = false;
+            let form = {
+              id: subjectJoin.ID,
+              password: values.passwordClass,
+            };
+            await CheckPasswordSub(form, (res) => (checkEqual = res)).then(
+              async () => {
+                if (checkEqual) {
+                  let newFormSubject = subjectJoin;
+                  delete newFormSubject.ID;
+                  newFormSubject.User = localStorage.getItem("user_id");
+                  newFormSubject.Status = "node";
+                  console.log("newFormSubject ", newFormSubject);
+                  await CreateJoinSubject(newFormSubject);
+                }
+              }
+            );
+            formJoin.resetFields();
+            setVisible(false);
+            setCheckPrivate(false);
+            setConfirmLoading(false);
+          } else {
+            let newFormSubject = subjectJoin;
+            delete newFormSubject.ID;
+            newFormSubject.User = localStorage.getItem("user_id");
+            newFormSubject.Status = "node";
+            console.log("newFormSubject ", newFormSubject);
+            await CreateJoinSubject(newFormSubject);
+            formJoin.resetFields();
+            setVisible(false);
+            setCheckPrivate(false);
+            setConfirmLoading(false);
+          }
+        }
+      })
+      .catch((info) => {
+        setConfirmLoading(false);
+      });
+  };
+
+  const onCancelJoin = () => {
+    formJoin.resetFields();
+    setVisible(false);
+    setCheckPrivate(false);
   };
 
   const onCreate = (fieldsValue) => {
@@ -136,15 +211,28 @@ const SubjectComponent = () => {
         </div>
       )}
       <ButtonCreateComponent setVisible={(res) => setVisible(res)} />
-      <SubjectModalComponent
-        visible={visible}
-        setVisible={(res) => setVisible(res)}
-        confirmLoading={confirmLoading}
-        fetch={fetch}
-        form={form}
-        handleCancel={() => handleCancel()}
-        handleOk={() => handleOk()}
-      />
+      {role === "Teacher" ? (
+        <SubjectModalComponent
+          visible={visible}
+          setVisible={(res) => setVisible(res)}
+          confirmLoading={confirmLoading}
+          fetch={fetch}
+          form={form}
+          handleCancel={() => handleCancel()}
+          handleOk={() => handleOk()}
+        />
+      ) : (
+        <SubjectJoinConponent
+          visible={visible}
+          onFinish={onFinish}
+          formJoin={formJoin}
+          onCancelJoin={onCancelJoin}
+          setCheckKey={setCheckKey}
+          setSubjectJoin={setSubjectJoin}
+          setCheckPrivate={setCheckPrivate}
+          checkPrivate={checkPrivate}
+        />
+      )}
     </div>
   );
 };

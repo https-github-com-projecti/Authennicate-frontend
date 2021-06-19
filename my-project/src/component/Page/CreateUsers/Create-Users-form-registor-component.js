@@ -1,10 +1,23 @@
 import React, { useState } from "react";
-import { Form, Input, Tooltip, Checkbox, Button, DatePicker } from "antd";
+import {
+  Form,
+  Input,
+  Tooltip,
+  Checkbox,
+  Button,
+  DatePicker,
+  Select,
+} from "antd";
 import { QuestionCircleOutlined } from "@ant-design/icons";
 import { Link, Redirect } from "react-router-dom";
 import UploadProfile from "./Create-Users-upload-profile-component";
 import { userForm } from "../../../tools/struct/createUserForm";
-import { createUser } from "../../../service/Create/Create-registor-service";
+import {
+  createUser,
+  GetRole,
+} from "../../../service/Create/Create-registor-service";
+
+const { Option } = Select;
 
 const formItemLayout = {
   labelCol: {
@@ -32,6 +45,7 @@ const tailFormItemLayout = {
 const FormRegistorComponent = () => {
   const [path, setPath] = useState("");
   const [success, setSuccess] = useState(false);
+  const [role, setRole] = useState(null);
 
   const [form] = Form.useForm();
   let user = userForm;
@@ -41,11 +55,27 @@ const FormRegistorComponent = () => {
     user.password = values.password;
     user.phoneNumber = values.phone;
     user.Upload = path;
+    user.Role = values.role;
     createUser(user, setSuccess);
   };
 
   const valueProfile = (event) => {
     setPath(event);
+  };
+
+  const selectRole = () => {
+    if (role !== null) {
+      let result = [];
+      let data = role.role;
+      result = data.map((item) => {
+        return (
+          <Option key={item.Name} value={item.ID}>
+            {item.Name}
+          </Option>
+        );
+      });
+      return result;
+    }
   };
 
   return (
@@ -151,6 +181,18 @@ const FormRegistorComponent = () => {
           ]}
         >
           <Input.Password />
+        </Form.Item>
+
+        <Form.Item name="role" label="role" rules={[{ required: true }]}>
+          <Select
+            placeholder="Select a option and change input text above"
+            allowClear
+            onClick={() => {
+              GetRole(setRole);
+            }}
+          >
+            {selectRole()}
+          </Select>
         </Form.Item>
 
         <Form.Item

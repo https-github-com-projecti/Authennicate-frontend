@@ -7,21 +7,28 @@ import {
 import "../../../styles/Course/style.css";
 import ButtonCreateComponent from "../Home/Home-button-create-component";
 import QrCodeComponent from "./Course-qr-code-component";
-import { Typography } from "antd";
+import { Typography, Space } from "antd";
+import {
+  VideoCameraTwoTone,
+  PhoneTwoTone,
+  MessageTwoTone,
+} from "@ant-design/icons";
+import VideoConn from "./Course-video-component";
 
 const { Paragraph } = Typography;
 
 const CourseHomeComponent = () => {
-  const [pathWall, setPathWall] = useState("");
+  // const [_, setPathWall] = useState("");
   const [subject, setSubject] = useState();
   const [create, setCreate] = useState(false);
   const { id } = useParams();
+  const [openVideo, setOpenVideo] = useState(false);
 
   useEffect(() => {
     GetSubjectByID(id, (res) => {
       setSubject(res.subject);
       GetUploadPath(res.subject.Upload, (res) => {
-        setPathWall(res.upload.Path);
+        // setPathWall(res.upload.Path);
       });
     });
   }, [id]);
@@ -38,11 +45,11 @@ const CourseHomeComponent = () => {
           margin: "2%",
           overflow: "hidden",
           position: "relative",
-          backgroundImage: `url(${
-            pathWall !== ""
-              ? `${process.env.REACT_APP_PORT_DEV}/${pathWall}`
-              : "https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-          })`,
+          // backgroundImage: `url(${
+          //   pathWall !== ""
+          //     ? `${process.env.REACT_APP_PORT_DEV}/${pathWall}`
+          //     : "https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+          // })`,
           backgroundPosition: "center",
           backgroundPositionX: "center",
           backgroundPositionY: "center",
@@ -81,7 +88,30 @@ const CourseHomeComponent = () => {
         </div>
       </div>
       <hr />
-      <ButtonCreateComponent setVisible={(res) => setCreate(res)} />
+      <div style={{ width: "100%" }}>
+        <Space size={20}>
+          <VideoCameraTwoTone
+            style={{ color: "black", cursor: "pointer", fontSize: "28px" }}
+            onClick={() => setOpenVideo(!openVideo)}
+          />
+          <PhoneTwoTone
+            style={{ color: "black", cursor: "pointer", fontSize: "28px" }}
+          />
+          <MessageTwoTone
+            style={{ color: "black", cursor: "pointer", fontSize: "28px" }}
+          />
+        </Space>
+        {openVideo ? <VideoConn /> : ""}
+      </div>
+      {/* <ButtonCreateComponent setVisible={(res) => setCreate(res)} /> */}
+      {/* <Search
+        placeholder="input search text"
+        allowClear
+        enterButton="Search"
+        size="large"
+        onSearch={onSearch}
+      /> */}
+
       <QrCodeComponent
         create={create}
         subject={subject}

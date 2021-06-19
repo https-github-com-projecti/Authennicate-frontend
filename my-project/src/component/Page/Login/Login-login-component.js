@@ -3,13 +3,12 @@ import { Modal } from "react-bootstrap";
 import { Form, Input, Button, Checkbox } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import { loginUser } from "../../../service/Home/Home-homepage-service";
-import { portDev, portAssets } from "../../../configs";
+import { portDev } from "../../../configs";
 import "../../../styles/home/style.css";
 import { Link } from "react-router-dom";
 import { showNoty } from "../../../tools/notification";
 
 const LoginComponent = (props) => {
-  
   const onFinish = (values) => {
     loginUser(values.username, values.password, portDev).then((res) => {
       if (res) {
@@ -39,7 +38,7 @@ const LoginComponent = (props) => {
         <Modal.Body
           style={{
             width: "100%",
-            backgroundImage: `url(${portAssets}selective-focus-photo-of-brown-grass-1776268.jpg)`,
+            // backgroundImage: `url(${portAssets}selective-focus-photo-of-brown-grass-1776268.jpg)`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
             backgroundPosition: "center",
